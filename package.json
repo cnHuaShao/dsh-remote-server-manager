@@ -1,0 +1,66 @@
+{
+  "name": "dsh-remote-server-manager",
+  "version": "1.4.0",
+  "private": false,
+  "description": "Connect to Linux servers over SSH, manage files, firewall rules, apt software sources, Docker registry mirrors, developer tool installation/upgrades, and Docker containers from the Harness Web UI.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "server/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "dependencies": {
+    "ssh2": "^1.17.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "ssh",
+    "remote-server",
+    "docker",
+    "server-manager"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnHuaShao/dsh-remote-server-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cnHuaShao/dsh-remote-server-manager/issues"
+  },
+  "homepage": "https://github.com/cnHuaShao/dsh-remote-server-manager#readme",
+  "author": "cnHuaShao"
+}
